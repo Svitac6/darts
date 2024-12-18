@@ -7,7 +7,7 @@ interface ThemeContextType {
 }
 
 // Création du contexte
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // Props pour le ThemeProvider
 interface ThemeProviderProps {
