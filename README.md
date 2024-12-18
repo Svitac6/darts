@@ -1,2 +1,11 @@
-# darts
-App pour compter points au jeu de flechette 
+# React Project
+
+## Installation
+
+Pour installer les dépendances du projet, exécutez la commande suivante :
+
+```bash
+npm install
+
+```bash
+npm run dev
