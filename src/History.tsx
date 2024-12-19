@@ -17,7 +17,7 @@ export default function History() {
    
 
     return (
-        <div className="h-screen flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white">
+        <div className="min-h-screen  flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white">
             <ThemeSwitcher title={formattedPath} />
 
             {/* Contenu centré */}

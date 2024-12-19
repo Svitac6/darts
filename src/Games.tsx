@@ -10,7 +10,7 @@ import { IoPersonAddSharp } from "react-icons/io5";
 export default function Game(): JSX.Element {
   const location = useLocation();
 
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string>("X01"); // Par défaut, X01 est sélectionné
   const [players, setPlayers] = useState<string[]>(["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]);
   const [isRandomOrder, setIsRandomOrder] = useState<boolean>(false);
 
@@ -26,7 +26,7 @@ export default function Game(): JSX.Element {
   const formattedPath = formatPath(location.pathname);
 
   return (
-    <div className="h-screen flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white">
       <ThemeSwitcher
         truc={
           <TbTargetArrow
