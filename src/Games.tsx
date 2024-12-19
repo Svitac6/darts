@@ -71,7 +71,7 @@ export default function Game(): JSX.Element {
             <div className="ml-52 mr-52 mt-10">
               <div className="flex gap-5">
                 <div className="flex items-center gap-2 justify-center">
-                  <div className="checkbox-wrapper-10">
+                  <div className="checkbox-wrapper-10 justify-center items-center">
                     <input
                       className="tgl tgl-flip"
                       id="cb5"
@@ -85,7 +85,7 @@ export default function Game(): JSX.Element {
                 </div>
 
                 <div
-                  className="flex bg-[var(--icon-color)] gap-2 p-2 mb-10 rounded-md cursor-pointer"
+                  className="flex mt-10 bg-[var(--icon-color)] gap-2 p-2 mb-10 rounded-md cursor-pointer"
                   onClick={() =>
                     setPlayers((prev) => [...prev, `Player ${prev.length + 1}`])
                   }
