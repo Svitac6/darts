@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ThemeSwitcher from '../compoment/ThemeSwitcher';
+import ThemeSwitcher from './ThemeSwitcher';
 import { useLocation } from "react-router-dom";
 
 export default function Cricket() {

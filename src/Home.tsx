@@ -4,7 +4,7 @@ import { IoMdContacts } from "react-icons/io";
 import { FaHistory } from "react-icons/fa";
 import { TbTargetArrow } from "react-icons/tb";
 import { IoIosSettings } from "react-icons/io";
-import ThemeSwitcher from './compoment/ThemeSwitcher';
+import ThemeSwitcher from './component/ThemeSwitcher';
 import { Link } from "react-router-dom";
 
 export default function Home() {
