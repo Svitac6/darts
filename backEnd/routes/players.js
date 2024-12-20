@@ -28,4 +28,19 @@ router.get('/:id', (req, res) => {
   });
 });
 
+// Supprimer un joueur par ID
+router.delete('/:id', (req, res) => {
+  const playerId = req.params.id; // Récupérer l'ID depuis l'URL
+  db.query('DELETE FROM players WHERE id = ?', [playerId], (err, result) => {
+    if (err) {
+      console.error('Erreur lors de la suppression du joueur :', err);
+      return res.status(500).json({ error: 'Erreur serveur.' });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'Joueur non trouvé.' });
+    }
+    res.status(200).json({ message: 'Joueur supprimé avec succès.' });
+  });
+});
+
 module.exports = router;
