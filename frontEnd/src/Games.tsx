@@ -26,7 +26,7 @@ export default function Game(): JSX.Element {
   const formattedPath = formatPath(location.pathname);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white">
+    <div className="">
       <ThemeSwitcher
         truc={
           <TbTargetArrow

@@ -33,7 +33,7 @@ export default function Players() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white">
+        <div className="">
             <ThemeSwitcher
                 truc={
                     <IoMdContacts

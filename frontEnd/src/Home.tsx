@@ -11,11 +11,11 @@ export default function Home() {
 
     return (
 
-        <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white">
+        <div className="   items-center justify-center">
             <ThemeSwitcher title="Bulleyes" />
 
             {/* Contenu centré */}
-            <div className="flex-grow flex items-center justify-center">
+            <div className="flex-grow mt-52 flex items-center justify-center ">
                 <div className="flex justify-center gap-32">
                     <Link to="/games">
                         <TbTargetArrow

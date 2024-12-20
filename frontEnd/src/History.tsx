@@ -38,7 +38,8 @@ export default function History() {
     }, []);
 
     return (
-        <div>
+        <div className="">
+            <ThemeSwitcher title={formattedPath} />
             <h1>Liste des utilisateurs</h1>
             <ul>
                 {users.map((user) => (
