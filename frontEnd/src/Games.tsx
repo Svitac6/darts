@@ -255,6 +255,10 @@ export default function Game(): JSX.Element {
         )}
       </div>
 
+      <div className="flex mt-10 items-center justify-center" >
+        <button className="bg-[var(--icon-color)] pr-8 pl-8 pt-2 pb-3 rounded-md text-2xl uppercase">Lancer la partie</button>
+      </div>
+
       {/* Overlay pour sélectionner des joueurs */}
       {isPlayerOverlayOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -291,50 +295,8 @@ export default function Game(): JSX.Element {
         </div>
       )}
 
-      {/* Overlay pour ajouter un nouveau joueur */}
-      {isNewPlayerOverlayOpen && (
-        <div className="mb-4">
-          {players.map((player) => (
-            <div
-              key={player.id}
-              className="flex items-center gap-4 mb-4 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg shadow"
-            >
-              <input
-                type="checkbox"
-                id={`player-${player.id}`}
-                className="hidden peer" // Masque l'input d'origine
-                checked={selectedPlayers.some((p) => p.id === player.id)}
-                onChange={() => handleTogglePlayer(player)}
-              />
-              <label
-                htmlFor={`player-${player.id}`}
-                className="w-6 h-6 rounded-full cursor-pointer relative border-2 border-gray-400 flex justify-center items-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all"
-              >
-                {/* Effet de paillettes */}
-                <span className="absolute w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 opacity-0 transition-opacity peer-checked:animate-sparkle peer-checked:opacity-100"></span>
-
-                <svg
-                  className="w-4 h-4 text-white hidden peer-checked:block"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </label>
-              <span className="text-lg text-gray-700">{player.name}</span>
-            </div>
-          ))}
-        </div>
-
-
-      )}
+      
+      
     </div>
   );
 }

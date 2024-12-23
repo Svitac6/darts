@@ -25,7 +25,7 @@ export default function History() {
 
     // Déclarez un état avec le type `User[]`
     const [users, setUsers] = useState<User[]>([]);
-
+            
     // Appeler l'API lors du chargement du composant
     useEffect(() => {
         axios.get<User[]>('http://localhost:3000/users') // URL du backend avec un type explicite

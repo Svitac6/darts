@@ -11,6 +11,7 @@ import Error403 from "./errors/Error403";
 import Error404 from "./errors/Error404";
 import Error500 from "./errors/Error500";
 import Layout from "./component/Layout";
+import X01Games from "./games/X01Games";
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/player" element={<Players />} />
           <Route path="/stats" element={<Stats />} />
           <Route path="/history" element={<History />} />
+          <Route path="/X01Games" element={<X01Games />} />
           <Route path="/403" element={<Error403 />} />
           <Route path="/500" element={<Error500 />} />
           <Route path="*" element={<Error404 />} />

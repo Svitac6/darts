@@ -15,7 +15,7 @@ export default function Home() {
             <ThemeSwitcher title="Bulleyes" />
 
             {/* Contenu centré */}
-            <div className="flex-grow mt-52 flex items-center justify-center ">
+            <div className="flex-grow mt-64 flex items-center justify-center ">
                 <div className="flex justify-center gap-32">
                     <Link to="/games">
                         <TbTargetArrow

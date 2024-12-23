@@ -7,7 +7,7 @@ export default function Cricket() {
 
     return (
         <div className="">
-            
+                
 
             {/* Contenu centré */}
 

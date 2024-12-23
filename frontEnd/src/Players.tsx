@@ -122,15 +122,15 @@ export default function Players() {
 
       {/* Liste des joueurs */}
       <div className="ml-52 mr-52">
-        {players.map((player, index) => (
-          <Player
-            key={player.id}
-            playerIndex={index}
-            name={player.name}
-            onMove={handleMove}
-            onDelete={handleDelete}
-          />
-        ))}
+            {players.map((player, index) => (
+            <Player
+                key={player.id}
+                playerIndex={index}
+                name={player.name}
+                onMove={handleMove}
+                onDelete={handleDelete}
+            />
+            ))}
       </div>
 
       {/* Overlay pour ajouter un joueur */}
