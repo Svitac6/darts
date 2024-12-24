@@ -104,6 +104,14 @@ export default function Game(): JSX.Element {
     setSelectedPlayers(newPlayers);
   };
 
+  const handGames = () => {
+    //recuperer la liste des joueurs
+    //recupérer le mode de jeux
+    //lancer la partie 
+  };
+
+  
+
   const formattedPath = formatPath(location.pathname);
 
   return (
@@ -118,146 +126,150 @@ export default function Game(): JSX.Element {
         title={formattedPath}
       />
 
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex text-3xl ">
-          <button
-            onClick={() => handleSelect("X01")}
-            className={`border border-[var(--icon-color)] rounded-l-lg p-8 pr-12 pl-12 ${selected === "X01" ? "bg-[var(--icon-color)] border-none" : ""
-              }`}
-            style={{
-              transition: "background-color 0.3s ease",
-            }}
-          >
-            X01
-          </button>
-          <button
-            onClick={() => handleSelect("Cricket")}
-            className={`border border-[var(--icon-color)] rounded-r-lg p-8 ${selected === "Cricket" ? "bg-[var(--icon-color)] border-none" : ""
-              }`}
-            style={{
-              transition: "background-color 0.3s ease",
-            }}
-          >
-            Cricket
-          </button>
+      
+
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex text-3xl ">
+            <button
+              onClick={() => handleSelect("X01")}
+              className={`border border-[var(--icon-color)] rounded-l-lg p-8 pr-12 pl-12 ${selected === "X01" ? "bg-[var(--icon-color)] border-none" : ""
+                }`}
+              style={{
+                transition: "background-color 0.3s ease",
+              }}
+            >
+              X01
+            </button>
+            <button
+              onClick={() => handleSelect("Cricket")}
+              className={`border border-[var(--icon-color)] rounded-r-lg p-8 ${selected === "Cricket" ? "bg-[var(--icon-color)] border-none" : ""
+                }`}
+              style={{
+                transition: "background-color 0.3s ease",
+              }}
+            >
+              Cricket
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div>
-        {selected === "X01" && (
-          <div className="flex mt-10 flex-col">
-            <div className="flex items-center justify-center">
-              <X01 />
-            </div>
-            <div className="ml-52 mr-52 mt-10">
-              <div className="flex gap-5">
-                <div className="flex items-center gap-2 justify-center">
-                  <div className="checkbox-wrapper-10 justify-center items-center">
-                    <input
-                      className="tgl tgl-flip"
-                      id="cb5"
-                      type="checkbox"
-                      checked={isRandomOrder}
-                      onChange={() => setIsRandomOrder((prev) => !prev)}
-                    />
-                    <label
-                      className="tgl-btn"
-                      data-tg-off="Nope"
-                      data-tg-on="Yeah!"
-                      htmlFor="cb5"
-                    ></label>
+        <div>
+          {selected === "X01" && (
+            <div className="flex mt-10 flex-col">
+              <div className="flex items-center justify-center">
+                <X01 />
+              </div>
+              <div className="ml-52 mr-52 mt-10">
+                <div className="flex gap-5">
+                  <div className="flex items-center gap-2 justify-center">
+                    <div className="checkbox-wrapper-10 justify-center items-center">
+                      <input
+                        className="tgl tgl-flip"
+                        id="cb5"
+                        type="checkbox"
+                        checked={isRandomOrder}
+                        onChange={() => setIsRandomOrder((prev) => !prev)}
+                      />
+                      <label
+                        className="tgl-btn"
+                        data-tg-off="Nope"
+                        data-tg-on="Yeah!"
+                        htmlFor="cb5"
+                      ></label>
+                    </div>
+                    <h1 className="text-xl">Ordre aléatoire</h1>
                   </div>
-                  <h1 className="text-xl">Ordre aléatoire</h1>
-                </div>
 
-                <div
-                  className="flex mt-10 bg-[var(--icon-color)] gap-2 p-2 mb-10 rounded-md cursor-pointer"
-                  onClick={() => setIsPlayerOverlayOpen(true)}
-                >
-                  <IoPersonAddSharp className="h-5 w-5 md:h-7 md:w-7 lg:h-9 lg:w-9" />
-                  <h1 className="text-3xl">Ajouter</h1>
-                </div>
-              </div>
-
-              {/* Liste des joueurs sélectionnés */}
-              <div
-                className="grid grid-cols-2 gap-4"
-                style={{
-                  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                }}
-              >
-                {selectedPlayers.map((player, index) => (
-                  <Player
-                    key={player.id}
-                    playerIndex={index}
-                    name={player.name}
-                    onMove={handleMove}
-                    onDelete={handleDelete}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-        {selected === "Cricket" && (
-          <div>
-            <Cricket />
-
-            <div className="ml-52 mr-52 mt-10">
-              <div className="flex gap-5">
-                <div className="flex items-center gap-2 justify-center">
-                  <div className="checkbox-wrapper-10 justify-center items-center">
-                    <input
-                      className="tgl tgl-flip"
-                      id="cb5"
-                      type="checkbox"
-                      checked={isRandomOrder}
-                      onChange={() => setIsRandomOrder((prev) => !prev)}
-                    />
-                    <label
-                      className="tgl-btn"
-                      data-tg-off="Nope"
-                      data-tg-on="Yeah!"
-                      htmlFor="cb5"
-                    ></label>
+                  <div
+                    className="flex mt-10 bg-[var(--icon-color)] gap-2 p-2 mb-10 rounded-md cursor-pointer"
+                    onClick={() => setIsPlayerOverlayOpen(true)}
+                  >
+                    <IoPersonAddSharp className="h-5 w-5 md:h-7 md:w-7 lg:h-9 lg:w-9" />
+                    <h1 className="text-3xl">Ajouter</h1>
                   </div>
-                  <h1 className="text-xl">Ordre aléatoire</h1>
                 </div>
 
+                {/* Liste des joueurs sélectionnés */}
                 <div
-                  className="flex mt-10 bg-[var(--icon-color)] gap-2 p-2 mb-10 rounded-md cursor-pointer"
-                  onClick={() => setIsPlayerOverlayOpen(true)}
+                  className="grid grid-cols-2 gap-4"
+                  style={{
+                    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                  }}
                 >
-                  <IoPersonAddSharp className="h-5 w-5 md:h-7 md:w-7 lg:h-9 lg:w-9" />
-                  <h1 className="text-3xl">Ajouter</h1>
+                  {selectedPlayers.map((player, index) => (
+                    <Player
+                      key={player.id}
+                      playerIndex={index}
+                      name={player.name}
+                      onMove={handleMove}
+                      onDelete={handleDelete}
+                    />
+                  ))}
                 </div>
-              </div>
-
-              {/* Liste des joueurs sélectionnés */}
-              <div
-                className="grid grid-cols-2 gap-4"
-                style={{
-                  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                }}
-              >
-                {selectedPlayers.map((player, index) => (
-                  <Player
-                    key={player.id}
-                    playerIndex={index}
-                    name={player.name}
-                    onMove={handleMove}
-                    onDelete={handleDelete}
-                  />
-                ))}
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+          {selected === "Cricket" && (
+            <div>
+              <Cricket />
 
-      <div className="flex mt-10 items-center justify-center" >
-        <button className="bg-[var(--icon-color)] pr-8 pl-8 pt-2 pb-3 rounded-md text-2xl uppercase">Lancer la partie</button>
-      </div>
+              <div className="ml-52 mr-52 mt-10">
+                <div className="flex gap-5">
+                  <div className="flex items-center gap-2 justify-center">
+                    <div className="checkbox-wrapper-10 justify-center items-center">
+                      <input
+                        className="tgl tgl-flip"
+                        id="cb5"
+                        type="checkbox"
+                        checked={isRandomOrder}
+                        onChange={() => setIsRandomOrder((prev) => !prev)}
+                      />
+                      <label
+                        className="tgl-btn"
+                        data-tg-off="Nope"
+                        data-tg-on="Yeah!"
+                        htmlFor="cb5"
+                      ></label>
+                    </div>
+                    <h1 className="text-xl">Ordre aléatoire</h1>
+                  </div>
+
+                  <div
+                    className="flex mt-10 bg-[var(--icon-color)] gap-2 p-2 mb-10 rounded-md cursor-pointer"
+                    onClick={() => setIsPlayerOverlayOpen(true)}
+                  >
+                    <IoPersonAddSharp className="h-5 w-5 md:h-7 md:w-7 lg:h-9 lg:w-9" />
+                    <h1 className="text-3xl">Ajouter</h1>
+                  </div>
+                </div>
+
+                {/* Liste des joueurs sélectionnés */}
+                <div
+                  className="grid grid-cols-2 gap-4"
+                  style={{
+                    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                  }}
+                >
+                  {selectedPlayers.map((player, index) => (
+                    <Player
+                      key={player.id}
+                      playerIndex={index}
+                      name={player.name}
+                      onMove={handleMove}
+                      onDelete={handleDelete}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="flex mt-10 items-center justify-center" >
+          <button className="bg-[var(--icon-color)] pr-8 pl-8 pt-2 pb-3 rounded-md text-2xl uppercase">Lancer la partie</button>
+        </div>
+
+    
 
       {/* Overlay pour sélectionner des joueurs */}
       {isPlayerOverlayOpen && (
@@ -295,8 +307,8 @@ export default function Game(): JSX.Element {
         </div>
       )}
 
-      
-      
+
+
     </div>
   );
 }
